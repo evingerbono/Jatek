@@ -7,7 +7,12 @@ Tervezési minta (design pattern)
 Mozgás: Helyekre lehet menni és minden helyről egy vagy több helyre lehet menni. Túl sok lesz a helyszín ezáltal sok elágazást kell használni 
 átláthatatlan lesz a program.
 <br>
-Ötletelés(Tervezési Minta)
+Ötletelés(Tervezési Minták)
+<br>
+Builder - Építő: Összetett objektum létrehozását biztosítja az elemeinek létrehozásával és összerakásával.
 <br>
 State (Objects for States) - Állapot: Adott objektum számára engedélyezi, hogy belső állapotának megváltozásával megváltoztathassa viselkedését is. Az objektum ekkor látszólag módosítja az osztályát.
-
+<br>
+Decorator (Wrapper) - Díszítő: További felelősségeket/tulajdonságokat csatol dinamikusan az objektumhoz.
+<br>
+Observer (Dependents, Publish-Subscribe) - Megfigyelő: Egy objektum állapotát megfigyeli, az objektum állapotának megváltozásáról pedig a tőle függő objektumokat értesíti.
