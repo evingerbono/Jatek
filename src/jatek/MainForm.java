@@ -78,7 +78,6 @@ public class MainForm extends javax.swing.JFrame {
         jTextArea1.insert(helyszin.leiras()+"\n",0);
         jTextArea1.setCaretPosition(0);
         jButton2.setText(helyszin.egyikBtn());
-        jButton1.setVisible(true);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
