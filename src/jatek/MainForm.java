@@ -1,12 +1,13 @@
 package jatek;
 
 public class MainForm extends javax.swing.JFrame {
+    Helyszin helyszin;
     public MainForm() {
         initComponents();
-        Helyszin helyszin = new Start();
-        jTextArea1.setText(helyszin.leiras());
+        helyszin = new Start();
+        jTextArea1.insert(helyszin.leiras()+"\n",0);
         jButton1.setVisible(false);
-        jButton2.setText("tovább");
+        jButton2.setText(helyszin.egyikBtn());
     }
     
     @SuppressWarnings("unchecked")
@@ -20,9 +21,15 @@ public class MainForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Játék");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(360, 200));
 
         jButton1.setText("Másik irány");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Egyik irány");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -67,10 +74,20 @@ public class MainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Helyszin h2 = new Kezdes();
-        jTextArea1.setText(h2.leiras());
+        helyszin = helyszin.egyikIrany();
+        jTextArea1.insert(helyszin.leiras()+"\n",0);
+        jTextArea1.setCaretPosition(0);
+        jButton2.setText(helyszin.egyikBtn());
         jButton1.setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        helyszin = helyszin.egyikIrany();
+        jTextArea1.insert(helyszin.leiras()+"\n",0);
+        jTextArea1.setCaretPosition(0);
+        jButton1.setText(helyszin.egyikBtn());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
